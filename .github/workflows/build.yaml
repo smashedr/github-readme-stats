@@ -2,12 +2,12 @@ name: "Build"
 
 on:
   workflow_dispatch:
-  release:
-    types:
-      - published
   repository_dispatch:
     types:
       - webhook
+  release:
+    types:
+      - published
 
 jobs:
   build:
