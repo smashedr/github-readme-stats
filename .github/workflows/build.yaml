@@ -28,6 +28,13 @@ jobs:
           repository: anuraghazra/github-readme-stats
           path: app
 
+      - name: "Update JSON"
+        uses: cssnr/update-json-value-action@v1
+        with:
+          file: app/package.json
+          keys: prepare
+          values: "npx husky"
+
       - name: "Docker Login"
         uses: docker/login-action@v2
         with:
