@@ -32,7 +32,7 @@ jobs:
         uses: cssnr/update-json-value-action@v1
         with:
           file: app/package.json
-          keys: prepare
+          keys: scripts.prepare
           values: "npx husky"
 
       - name: "Docker Login"
