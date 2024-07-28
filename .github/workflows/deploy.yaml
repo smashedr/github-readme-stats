@@ -1,0 +1,28 @@
+name: "Deploy"
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - webhook
+  #release:
+  #  types:
+  #    - published
+
+jobs:
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: "Portainer Deploy"
+        uses: cssnr/portainer-stack-deploy-action@v1
+        with:
+          url: ${{ secrets.PORTAINER_URL }}
+          token: ${{ secrets.PORTAINER_TOKEN }}
+          file: docker-compose-swarm.yaml
+          name: github-readme-stats
+          username: ${{ vars.GHCR_USER }}
+          password: ${{ secrets.GHCR_PASS }}
+          env_json: '{"PAT_1": "${{ secrets.GHCR_PASS }}"}'

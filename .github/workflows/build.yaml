@@ -2,12 +2,12 @@ name: "Build"
 
 on:
   workflow_dispatch:
-  repository_dispatch:
-    types:
-      - webhook
-  release:
-    types:
-      - published
+  #repository_dispatch:
+  #  types:
+  #    - webhook
+  #release:
+  #  types:
+  #    - published
 
 jobs:
   build:
@@ -63,7 +63,7 @@ jobs:
   #    - name: "Portainer Deploy"
   #      uses: cssnr/portainer-stack-deploy-action@v1
   #      with:
-  #        url: https://portainer-o-us-east-1.hosted-domains.com
+  #        url: ${{ secrets.PORTAINER_URL }}
   #        token: ${{ secrets.PORTAINER_TOKEN }}
   #        file: docker-compose-swarm.yaml
   #        name: github-readme-stats
