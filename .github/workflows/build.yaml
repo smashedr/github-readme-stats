@@ -25,7 +25,7 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v4
         with:
-          repository: https://github.com/anuraghazra/github-readme-stats
+          repository: anuraghazra/github-readme-stats
           path: app
 
       - name: "Docker Login"
