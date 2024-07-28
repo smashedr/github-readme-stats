@@ -38,6 +38,8 @@ services:
     build:
       context: .
     image: ghcr.io/smashedr/github-readme-stats-app:latest
+    environment:
+      PAT_1: ${PAT_1}
     command: "node express.js"
     deploy:
       replicas: 1
