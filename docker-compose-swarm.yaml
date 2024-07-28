@@ -36,7 +36,7 @@ services:
 
   app:
     build:
-      context: app
+      context: .
     image: ghcr.io/smashedr/github-readme-stats-app:latest
     command: "node express.js"
     deploy:

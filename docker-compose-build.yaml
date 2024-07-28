@@ -29,7 +29,7 @@ services:
 
   app:
     build:
-      context: app
+      context: .
       x-bake:
         platforms:
           - linux/amd64
