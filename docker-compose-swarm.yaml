@@ -29,8 +29,6 @@ services:
       - traefik-public
 
   app:
-    build:
-      context: .
     image: ghcr.io/smashedr/github-readme-stats:latest
     environment:
       PAT_1: ${PAT_1}
