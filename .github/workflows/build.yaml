@@ -2,9 +2,9 @@ name: "Build"
 
 on:
   workflow_dispatch:
-  #repository_dispatch:
-  #  types:
-  #    - webhook
+  repository_dispatch:
+    types:
+      - webhook
   #release:
   #  types:
   #    - published
@@ -50,7 +50,7 @@ jobs:
       - name: "Bake and Push"
         uses: docker/bake-action@v5
         with:
-          files: docker-compose-build.yaml
+          files: docker-bake.json
           push: true
 
   #deploy:

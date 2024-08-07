@@ -1,0 +1,16 @@
+{
+  "group": {
+    "default": {
+      "targets": ["app"]
+    }
+  },
+  "target": {
+    "app": {
+      "context": ".",
+      "dockerfile": "Dockerfile",
+      "tags": ["ghcr.io/smashedr/github-readme-stats:latest"],
+      "platforms": ["linux/amd64", "linux/arm64"],
+      "output": ["type=image,push=true"]
+    }
+  }
+}
